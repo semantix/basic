@@ -21,7 +21,7 @@
             <scope>test</scope>
         </dependency>
         <!-- SL4J Logging with LogBack Implementation -->
-        <!-- see configuration file .../resources/logback.xml -->
+        <!-- see configuration file .../resources/logback-test.xml -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
