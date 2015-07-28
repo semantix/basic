@@ -1,7 +1,7 @@
 package org.lexemantix.utils.file;
 
+
 import org.apache.commons.lang3.StringUtils;
-import org.lexemantix.utils.exceptions.LMException;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -11,9 +11,7 @@ import java.net.URI;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * This class has some utility methods to find and add files to classpath
@@ -34,8 +32,7 @@ public class LMClassPathManager
     public static void FindItAndAddToClassPath(File startDirectory,
                                           String fileNameToMatch,
                                           FileFilter fileFilter)
-            throws NullPointerException, IOException
-    {
+            throws NullPointerException, IOException {
         if (StringUtils.isEmpty(fileNameToMatch))
              throw new NullPointerException("File Name or Pattern cannot be empty!");
 
