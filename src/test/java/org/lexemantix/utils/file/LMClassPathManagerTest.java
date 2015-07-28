@@ -22,6 +22,6 @@ public class LMClassPathManagerTest extends TestCase
     public void testWithResource1() throws Exception
     {
         File startDir = new File(System.getProperty("user.dir"));
-        LMClassPathManager.FindItAndAddToClassPath(startDir, exactFileName, fileFilter);
+        LMClassPathManager.findItAndAddToClassPath(startDir, exactFileName, fileFilter);
     }
 }

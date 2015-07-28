@@ -29,7 +29,7 @@ public class LMClassPathManager
      * @param fileFilter  File Filter
      * @return
      */
-    public static void FindItAndAddToClassPath(File startDirectory,
+    public static void findItAndAddToClassPath(File startDirectory,
                                           String fileNameToMatch,
                                           FileFilter fileFilter)
             throws NullPointerException, IOException {

@@ -1,6 +1,9 @@
 package org.lexemantix.utils.file;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,4 +86,20 @@ public class LMFileUtils
         return LMFileUtils.getAllFiles(".", fileNameRegex);
     }
 
+    /**
+     * Returns File from its URL
+     * @param fileUrl
+     * @return
+     */
+    public static String getURLContents(URL fileUrl) throws IOException
+    {
+        InputStream input = fileUrl.openStream();
+        try
+        {
+            return IOUtils.toString( input ) ;
+        } finally
+        {
+            IOUtils.closeQuietly(input);
+        }
+    }
 }
