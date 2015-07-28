@@ -1,6 +1,8 @@
 package org.lexemantix.utils.file;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dks02 on 6/15/15.
@@ -44,6 +46,41 @@ public class LMFileUtils
         {
             output.close();
         }
+    }
+
+    /**
+     * Returns Files (list of file objects) for the matching files in a given directory
+     * @param dir
+     * @param fileNameRegex
+     * @return
+     */
+    public static List<File> getAllFiles(String dir, String fileNameRegex)
+    {
+        String defaultRegex = ".\\.*";
+
+        List<File> inputFiles = new ArrayList<File>();
+        LMFileFilter lmff = new LMFileFilter((fileNameRegex == null) ? defaultRegex : fileNameRegex);
+
+        try
+        {
+            LMClassPathManager.scan(new File(dir), inputFiles, lmff);
+        }
+        catch(IOException ioe)
+        {
+            ioe.printStackTrace();
+        }
+
+        return inputFiles;
+    }
+
+    /**
+     * Returns all Files in current directory
+     * @param fileNameRegex
+     * @return
+     */
+    public static List<File> getAllFiles(String fileNameRegex)
+    {
+        return LMFileUtils.getAllFiles(".", fileNameRegex);
     }
 
 }
