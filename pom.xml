@@ -6,7 +6,7 @@
 
     <groupId>org.lexemantix.basic</groupId>
     <artifactId>basic</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.1</version> 
 
     <dependencies>
         <dependency>
